@@ -15,7 +15,7 @@
             android:id="@+id/tvWelcomeTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selamat Datang"
+            android:text="Selamat Datang Guyss!"
             android:textSize="26sp"
             android:textStyle="bold"
             android:textColor="@color/text_dark"
@@ -25,7 +25,7 @@
             android:id="@+id/tvWelcomeDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Pilih menu yang tersedia."
+            android:text="Pilih menu yang ada dalam materi Pertemuan 2, 3, 4 dan 5 saya"
             android:textColor="@color/text_gray"
             android:layout_marginBottom="24dp" />
 
@@ -52,6 +52,15 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:text="Custom 2"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/primary_blue_dark"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnPertemuan5"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Pertemuan 5"
             android:layout_marginBottom="12dp"
             android:backgroundTint="@color/primary_blue_dark"
             android:textColor="@color/white" />

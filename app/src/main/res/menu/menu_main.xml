@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_home"
+        android:title="Dashboard" />
+
+    <item
+        android:title="Mode">
+
+        <menu>
+            <item
+                android:id="@+id/menu_dark"
+                android:title="Mode Gelap"
+                android:checkable="true"/>
+
+            <item
+                android:id="@+id/menu_light"
+                android:title="Mode Terang"
+                android:checkable="true"/>
+        </menu>
+
+    </item>
+
+    <item
+        android:id="@+id/menu_web"
+        android:title="WebView" />
+
+</menu>

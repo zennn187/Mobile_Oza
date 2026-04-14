@@ -32,6 +32,10 @@ class DashboardActivity : AppCompatActivity() {
             startActivity(Intent(this, Custom2Activity::class.java))
         }
 
+        binding.btnPertemuan5.setOnClickListener {
+            startActivity(Intent(this, com.example.oza_idgaf.Pertemuan5.ToolbarActivity::class.java))
+        }
+
         binding.btnLogout.setOnClickListener {
             MaterialAlertDialogBuilder(this)
                 .setTitle("Konfirmasi Logout")
