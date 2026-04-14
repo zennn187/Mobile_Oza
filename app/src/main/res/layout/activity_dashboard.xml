@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tvWelcomeTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selamat Datang"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/text_dark"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvWelcomeDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pilih menu yang tersedia."
+            android:textColor="@color/text_gray"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/btnRumus"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Rumus Bangun Ruang"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/primary_blue"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnCustom1"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Custom 1"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/primary_blue_dark"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnCustom2"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Custom 2"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/primary_blue_dark"
+            android:textColor="@color/white" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Logout"
+            android:backgroundTint="@color/text_gray"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</ScrollView>
