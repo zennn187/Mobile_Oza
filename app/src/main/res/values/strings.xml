@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">oza-idgaf</string>
+
+    <!-- Login Page -->
+    <string name="welcome_title">Selamat Datang!</string>
+    <string name="welcome_subtitle">Silakan masuk ke akun Anda</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="signup_text">Belum punya akun? Daftar</string>
+</resources>

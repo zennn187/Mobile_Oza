@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="@color/background_gray">
+
+    <ImageView
+        android:id="@+id/WelcomeLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/primary_blue"
+        android:padding="24dp"
+        android:src="@drawable/ic_launcher_foreground" />
+
+    <TextView
+        android:id="@+id/WelcomeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Selamat Datang!"
+        android:textSize="32sp"
+        android:textColor="@color/primary_blue"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/montserrat_bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/UserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Username"
+        android:textSize="20sp"
+        android:textColor="@color/text_dark"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_semibold"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/PesanMasuk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Anda berhasil login ke aplikasi!"
+        android:textSize="14sp"
+        android:textColor="@color/text_gray"
+        android:gravity="center"
+        android:fontFamily="@font/montserrat_regular"/>
+
+</LinearLayout>
