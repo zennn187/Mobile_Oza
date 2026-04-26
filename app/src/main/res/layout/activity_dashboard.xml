@@ -66,11 +66,20 @@
             android:textColor="@color/white" />
 
         <Button
+            android:id="@+id/btnPertemuan6"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Pertemuan 6"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="@color/primary_blue_dark"
+            android:textColor="@color/white" />
+
+        <Button
             android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="Logout"
             android:backgroundTint="@color/text_gray"
+            android:text="Logout"
             android:textColor="@color/white" />
     </LinearLayout>
 </ScrollView>

@@ -1,48 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    package="com.example.oza_idgaf">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
         android:theme="@style/Theme.Ozaidgaf">
 
-        <!-- 🔥 PERTEMUAN 5 -->
+        <!-- ✅ PERTEMUAN 6 (UTAMA) -->
         <activity
-            android:name=".Pertemuan5.WebViewActivity"
+            android:name=".Pertemuan6.WebViewActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Pertemuan5.ToolbarActivity"
-            android:exported="false" />
-
-        <!-- 🔥 PERTEMUAN 4 -->
-        <activity
-            android:name=".Pertemuan4.Custom2Activity"
+            android:name=".Pertemuan6.MainActivity"
             android:exported="false" />
 
         <activity
-            android:name=".Pertemuan4.Custom1Activity"
+            android:name=".Pertemuan6.LoginActivity"
             android:exported="false" />
 
+        <!-- 🚀 LAUNCHER -->
         <activity
-            android:name=".Pertemuan4.RumusBangunRuangActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Pertemuan4.DashboardActivity"
-            android:exported="false" />
-
-        <!-- 🔥 LOGIN JADI PINTU MASUK -->
-        <activity
-            android:name=".Pertemuan4.LoginActivity"
+            android:name=".Pertemuan6.SplashActivity"
             android:exported="true">
 
             <intent-filter>
@@ -52,18 +35,18 @@
 
         </activity>
 
-        <!-- 🔥 LAMA (biar tidak error) -->
-        <activity
-            android:name=".Pertemuan2.WelcomeActivity"
-            android:exported="false" />
+        <!-- 🔽 PERTEMUAN LAMA (BIAR GAK DIHAPUS) -->
+        <activity android:name=".Pertemuan5.WebViewActivity" android:exported="false"/>
+        <activity android:name=".Pertemuan5.ToolbarActivity" android:exported="false"/>
 
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+        <activity android:name=".Pertemuan4.Custom2Activity" android:exported="false"/>
+        <activity android:name=".Pertemuan4.Custom1Activity" android:exported="false"/>
+        <activity android:name=".Pertemuan4.RumusBangunRuangActivity" android:exported="false"/>
+        <activity android:name=".Pertemuan4.DashboardActivity" android:exported="false"/>
+        <activity android:name=".Pertemuan4.LoginActivity" android:exported="false"/>
 
-        <activity
-            android:name=".Pertemuan2.SecondActivity"
-            android:exported="false" />
+        <activity android:name=".Pertemuan2.WelcomeActivity" android:exported="false"/>
+        <activity android:name=".Pertemuan2.SecondActivity" android:exported="false"/>
 
     </application>
 
