@@ -18,4 +18,11 @@
     <color name="text_dark">#1F2937</color>
     <color name="text_gray">#6B7280</color>
     <color name="white">#FFFFFF</color>
+    <!-- Warna Project Bina Desa -->
+    <color name="bina_desa_primary">#2E7D32</color>
+    <color name="bina_desa_primary_dark">#1B5E20</color>
+    <color name="bina_desa_accent">#FFC107</color>
+    <color name="bina_desa_background">#F5F5F5</color>
+    <color name="bina_desa_text_secondary">#666666</color>
+
 </resources>

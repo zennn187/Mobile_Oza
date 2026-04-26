@@ -5,10 +5,11 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import com.example.oza_idgaf.Pertemuan4.LoginActivity
+import com.example.oza_idgaf.PrefManager
 import com.example.oza_idgaf.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivitySplashBinding
     private lateinit var prefManager: PrefManager
 
@@ -20,8 +21,8 @@ class SplashActivity : AppCompatActivity() {
         prefManager = PrefManager(this)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (prefManager.isLogin()) {
-                startActivity(Intent(this, MainActivity::class.java))
+            if (prefManager.isLogin) {
+                startActivity(Intent(this, DashboardActivity::class.java))
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))
             }

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="colorPrimary">@color/bina_desa_primary</item>
+        <item name="colorPrimaryDark">@color/bina_desa_primary_dark</item>
+        <item name="colorAccent">@color/bina_desa_accent</item>
+    </style>
+</resources>

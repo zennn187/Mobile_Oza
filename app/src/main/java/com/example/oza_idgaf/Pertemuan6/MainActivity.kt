@@ -3,6 +3,8 @@ package com.example.oza_idgaf.Pertemuan6
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.oza_idgaf.PrefManager
+import com.example.oza_idgaf.Pertemuan4.LoginActivity
 import com.example.oza_idgaf.databinding.ActivityMain2Binding
 
 class MainActivity : AppCompatActivity() {

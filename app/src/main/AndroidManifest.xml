@@ -10,43 +10,40 @@
         android:label="@string/app_name"
         android:theme="@style/Theme.Ozaidgaf">
 
-        <!-- ✅ PERTEMUAN 6 (UTAMA) -->
-        <activity
-            android:name=".Pertemuan6.WebViewActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Pertemuan6.MainActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".Pertemuan6.LoginActivity"
-            android:exported="false" />
-
-        <!-- 🚀 LAUNCHER -->
+        <!-- PERTEMUAN 6 -->
         <activity
             android:name=".Pertemuan6.SplashActivity"
-            android:exported="true">
-
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
 
-        <!-- 🔽 PERTEMUAN LAMA (BIAR GAK DIHAPUS) -->
+        <activity
+            android:name=".Pertemuan6.DashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".Pertemuan6.WebViewActivity"
+            android:exported="false" />
+
+        <!-- ✅ LoginActivity yang ASLI (bukan dari Pertemuan6) -->
+        <activity
+            android:name=".Pertemuan4.LoginActivity"
+            android:exported="false" />
+
+
         <activity android:name=".Pertemuan5.WebViewActivity" android:exported="false"/>
         <activity android:name=".Pertemuan5.ToolbarActivity" android:exported="false"/>
-
         <activity android:name=".Pertemuan4.Custom2Activity" android:exported="false"/>
         <activity android:name=".Pertemuan4.Custom1Activity" android:exported="false"/>
         <activity android:name=".Pertemuan4.RumusBangunRuangActivity" android:exported="false"/>
         <activity android:name=".Pertemuan4.DashboardActivity" android:exported="false"/>
-        <activity android:name=".Pertemuan4.LoginActivity" android:exported="false"/>
-
         <activity android:name=".Pertemuan2.WelcomeActivity" android:exported="false"/>
         <activity android:name=".Pertemuan2.SecondActivity" android:exported="false"/>
+        <activity android:name=".MainActivity" android:exported="false"/>
 
     </application>
 
