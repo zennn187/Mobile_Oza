@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.oza_idgaf.Home.HomeFragment
 import com.example.oza_idgaf.R
 import com.example.oza_idgaf.databinding.ActivityMain2Binding
+import android.content.SharedPreferences
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,12 +17,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        sharedPreferences = SharedPreferences(this)
+        sharedPreferences = getSharedPreferences("OzaPrefs", MODE_PRIVATE)
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-
-                .replace(binding.root.id, HomeFragment())
+                .replace(binding.fragmentContainer.id, HomeFragment())
                 .commit()
         }
     }
