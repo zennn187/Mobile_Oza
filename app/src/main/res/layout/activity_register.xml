@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F9FAFC">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="32dp"
+        android:paddingVertical="24dp"
+        android:gravity="center_horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#F0EEFA"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="16dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_binadesa"
+                android:padding="18dp"
+                android:contentDescription="@string/app_name" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Buat Akun Baru"
+            android:textSize="26sp"
+            android:textColor="#1A1C24"
+            android:fontFamily="@font/montserrat_bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Isi data diri Anda untuk mendaftar"
+            android:textColor="#757C8E"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="@font/montserrat_regular" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconTint="#7E57C2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Lengkap"
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="textPersonName"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_mail"
+            app:startIconTint="#7E57C2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="textEmailAddress"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_calendar"
+            app:startIconTint="#7E57C2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterBirthDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Tanggal Lahir"
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:paddingHorizontal="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Jenis Kelamin"
+                android:textColor="#7E57C2"
+                android:textSize="12sp"
+                android:fontFamily="@font/montserrat_medium"
+                android:layout_marginBottom="8dp" />
+
+            <RadioGroup
+                android:id="@+id/rgGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbMale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Laki-laki"
+                    android:textColor="#1A1C24"
+                    android:fontFamily="@font/montserrat_regular"
+                    app:useMaterialThemeColors="true" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/rbFemale"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Perempuan"
+                    android:textColor="#1A1C24"
+                    android:fontFamily="@font/montserrat_regular"
+                    app:useMaterialThemeColors="true" />
+            </RadioGroup>
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_profile"
+            app:startIconTint="#7E57C2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Username"
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="text"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_info"
+            app:startIconTint="#7E57C2"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#9AA1B1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_info"
+            app:startIconTint="#7E57C2"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#9AA1B1">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRegisterConfirmPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Konfirmasi Password"
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@drawable/header_gradient"
+            android:elevation="4dp"
+            android:outlineProvider="background"
+            android:clipToOutline="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Selanjutnya"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:backgroundTint="@android:color/transparent"
+                app:rippleColor="#33FFFFFF"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAllCaps="false" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sudah memiliki akun? "
+                android:textColor="#757C8E"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <TextView
+                android:id="@+id/tvToLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Masuk"
+                android:textColor="#6200EE"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,53 +1,66 @@
 package com.example.oza_idgaf.Home
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.webkit.WebResourceRequest
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
-import com.example.oza_idgaf.databinding.FragmentHomeBinding
+import com.example.oza_idgaf.Pertemuan4.LoginActivity
+import com.example.oza_idgaf.Pertemuan4.RumusBangunRuangActivity
+import com.example.oza_idgaf.Pertemuan6.SharedPreferences
+import com.example.oza_idgaf.Pertemuan6.WebViewActivity
+import com.example.oza_idgaf.R
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var sharedPreferences: SharedPreferences
 
-    @SuppressLint("SetJavaScriptEnabled")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+    ): View? {
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        binding.webView.apply {
+        sharedPreferences = SharedPreferences(requireContext())
 
-            // 🔥 BIAR TETAP DI DALAM APP
-            webViewClient = object : WebViewClient() {
-                override fun shouldOverrideUrlLoading(
-                    view: WebView?,
-                    request: WebResourceRequest?
-                ): Boolean {
-                    view?.loadUrl(request?.url.toString())
-                    return true
-                }
-            }
+        val tvUserName = view.findViewById<TextView>(R.id.tvUserName)
+        val cardKalkulator = view.findViewById<CardView>(R.id.cardKalkulator)
+        val cardWebView = view.findViewById<CardView>(R.id.cardWebView)
+        val cardInfo = view.findViewById<CardView>(R.id.cardInfo)
+        val cardKeluar = view.findViewById<CardView>(R.id.cardKeluar)
 
-            settings.javaScriptEnabled = true
-            settings.domStorageEnabled = true
-
-            // 🔗 URL KAMU
-            loadUrl("https://oza-umkm.alwaysdata.net/dashboard")
+        val namaUser = sharedPreferences.getNama()
+        if (namaUser.isNotEmpty()) {
+            tvUserName.text = namaUser
         }
 
-        return binding.root
-    }
+        cardKalkulator.setOnClickListener {
+            val intent = Intent(activity, RumusBangunRuangActivity::class.java)
+            startActivity(intent)
+        }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+        cardWebView.setOnClickListener {
+            val intent = Intent(activity, WebViewActivity::class.java)
+            startActivity(intent)
+        }
+
+        cardInfo.setOnClickListener {
+            Toast.makeText(context, "Fitur Info Proyek UMKM Oza Idgaf", Toast.LENGTH_SHORT).show()
+        }
+
+        cardKeluar.setOnClickListener {
+            sharedPreferences.isLogin = false
+
+            val intent = Intent(activity, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            activity?.finish()
+        }
+
+        return view
     }
 }

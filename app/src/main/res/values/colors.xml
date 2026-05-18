@@ -9,6 +9,15 @@
     <color name="teal_700">#018786</color>
     <color name="accent">#8D6E63</color> <!-- Coklat -->
 
+    <color name="purple_primary">#6200EE</color>
+    <color name="purple_medium">#7E57C2</color>
+    <color name="purple_light">#9575CD</color>
+
+    <color name="bg_kalkulator">#F3E5F5</color>
+    <color name="bg_webview">#E8EAF6</color>
+    <color name="bg_info">#EDE7F6</color>
+    <color name="bg_logout">#FFEBEE</color>
+
     <!-- Warna untuk Login Page -->
     <color name="border_gray">#E2E8F0</color>
     <color name="error_red">#EF4444</color>

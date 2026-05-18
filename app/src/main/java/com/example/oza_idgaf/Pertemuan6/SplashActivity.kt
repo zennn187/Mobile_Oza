@@ -6,22 +6,21 @@ import android.os.Handler
 import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 import com.example.oza_idgaf.Pertemuan4.LoginActivity
-import com.example.oza_idgaf.PrefManager
 import com.example.oza_idgaf.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
-    private lateinit var prefManager: PrefManager
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        prefManager = PrefManager(this)
+        sharedPreferences = SharedPreferences(this)
 
         Handler(Looper.getMainLooper()).postDelayed({
-            if (prefManager.isLogin) {
+            if (sharedPreferences.isLogin) {
                 startActivity(Intent(this, DashboardActivity::class.java))
             } else {
                 startActivity(Intent(this, LoginActivity::class.java))

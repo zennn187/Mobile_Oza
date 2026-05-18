@@ -6,7 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import com.example.oza_idgaf.PrefManager
 import com.example.oza_idgaf.R
 import com.example.oza_idgaf.Pertemuan4.LoginActivity
 import com.example.oza_idgaf.Pertemuan4.RumusBangunRuangActivity
@@ -14,14 +13,14 @@ import com.example.oza_idgaf.databinding.ActivityDashboardBinding
 
 class DashboardActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDashboardBinding
-    private lateinit var prefManager: PrefManager
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        prefManager = PrefManager(this)
+        sharedPreferences = SharedPreferences(this)
 
         val toolbar: Toolbar = binding.toolbar
         setSupportActionBar(toolbar)
@@ -53,7 +52,7 @@ class DashboardActivity : AppCompatActivity() {
         }
 
         binding.btnLogout.setOnClickListener {
-            prefManager.isLogin = false  // ← RESET STATUS LOGIN
+            sharedPreferences.isLogin = false
             startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }

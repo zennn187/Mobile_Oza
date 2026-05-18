@@ -4,71 +4,165 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/background_gray">
+    android:background="#F9FAFC">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="24dp"
+        android:paddingHorizontal="32dp"
         android:gravity="center_horizontal">
 
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:src="@drawable/logo_binadesa"
-            android:contentDescription="@string/app_name"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#F0EEFA"
+            android:layout_marginBottom="28dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/logo_binadesa"
+                android:padding="22dp"
+                android:contentDescription="@string/app_name" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Login"
-            android:textStyle="bold"
+            android:text="Selamat Datang"
             android:textSize="28sp"
-            android:textColor="@color/text_dark"
-            android:layout_marginBottom="8dp" />
+            android:textColor="#1A1C24"
+            android:fontFamily="@font/montserrat_bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Silakan masuk untuk melanjutkan"
-            android:textColor="@color/text_gray"
-            android:layout_marginBottom="24dp" />
+            android:text="Silakan masuk untuk mengakses sistem"
+            android:textColor="#757C8E"
+            android:textSize="14sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="36dp"
+            android:fontFamily="@font/montserrat_regular" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="18dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@drawable/ic_menu_my_places"
+            app:startIconTint="#7E57C2">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Username"
-                android:inputType="text" />
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="text"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp">
+            android:layout_marginBottom="32dp"
+            app:boxBackgroundMode="outline"
+            app:boxBackgroundColor="#F3F4F6"
+            app:boxCornerRadiusTopStart="16dp"
+            app:boxCornerRadiusTopEnd="16dp"
+            app:boxCornerRadiusBottomStart="16dp"
+            app:boxCornerRadiusBottomEnd="16dp"
+            app:boxStrokeColor="#6200EE"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxStrokeWidth="0dp"
+            app:hintTextColor="#7E57C2"
+            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+            app:startIconTint="#7E57C2"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="#9AA1B1">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
-                android:inputType="textPassword" />
+                android:textColor="#1A1C24"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:paddingVertical="16dp"
+                android:fontFamily="@font/montserrat_regular" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/btnLogin"
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:text="LOGIN"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/primary_blue" />
+            android:background="@drawable/header_gradient"
+            android:elevation="4dp"
+            android:outlineProvider="background"
+            android:clipToOutline="true">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Masuk Aplikasi"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                app:backgroundTint="@android:color/transparent"
+                app:rippleColor="#33FFFFFF"
+                android:fontFamily="@font/montserrat_bold"
+                android:textAllCaps="false" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Belum punya akun? "
+                android:textColor="#757C8E"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_regular" />
+
+            <TextView
+                android:id="@+id/tvToRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Sekarang"
+                android:textColor="#6200EE"
+                android:textSize="14sp"
+                android:fontFamily="@font/montserrat_bold"
+                android:clickable="true"
+                android:focusable="true" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1.5" />
     </LinearLayout>
 </ScrollView>

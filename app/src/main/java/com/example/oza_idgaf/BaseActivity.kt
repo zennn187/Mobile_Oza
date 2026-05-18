@@ -17,16 +17,24 @@ class BaseActivity : AppCompatActivity() {
         binding = ActivityBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // default fragment
         loadFragment(HomeFragment())
 
-        binding.bottomNav.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.nav_home -> loadFragment(HomeFragment())
-                R.id.nav_message -> loadFragment(MessageFragment())
-                R.id.nav_more -> loadFragment(MoreFragment())
+        binding.bottomNav.setOnItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_home -> {
+                    loadFragment(HomeFragment())
+                    true
+                }
+                R.id.nav_message -> {
+                    loadFragment(MessageFragment())
+                    true
+                }
+                R.id.nav_more -> {
+                    loadFragment(MoreFragment())
+                    true
+                }
+                else -> false
             }
-            true
         }
     }
 
