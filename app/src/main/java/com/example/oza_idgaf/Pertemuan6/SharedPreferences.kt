@@ -93,6 +93,16 @@ class SharedPreferences(context: Context) {
         return sharedPreferences.getString(keyConfirmPassword, "") ?: ""
     }
 
+    // Contoh implementasi di dalam PrefManager Anda
+    fun setFirstTimeLaunch(isFirstTime: Boolean) {
+        editor.putBoolean("IsFirstTimeLaunch", isFirstTime)
+        editor.commit()
+    }
+
+    fun isFirstTimeLaunch(): Boolean {
+        return sharedPreferences.getBoolean("IsFirstTimeLaunch", true) // Default true
+    }
+
     fun clearData() {
         editor.clear()
         editor.apply()

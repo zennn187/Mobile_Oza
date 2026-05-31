@@ -2,10 +2,10 @@ package com.example.oza_idgaf.Pertemuan6
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.oza_idgaf.Home.HomeFragment
 import com.example.oza_idgaf.R
 import com.example.oza_idgaf.databinding.ActivityMain2Binding
 import android.content.SharedPreferences
+import com.example.oza_idgaf.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 

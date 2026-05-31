@@ -4,7 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.oza_idgaf.Pertemuan6.MainActivity
+import com.example.oza_idgaf.BaseActivity
+import com.example.oza_idgaf.OnboardingActivity
 import com.example.oza_idgaf.Pertemuan6.SharedPreferences
 import com.example.oza_idgaf.databinding.ActivityLoginBinding
 
@@ -41,11 +42,9 @@ class LoginActivity : AppCompatActivity() {
             val registeredPassword = sharedPreferences.getPassword()
 
             if (username == registeredUsername && password == registeredPassword) {
-                // Simpan status login ke SharedPreferences
                 sharedPreferences.isLogin = true
-
-                // Pindah ke MainActivity yang meng-host HomeFragment
-                val intent = Intent(this, MainActivity::class.java)
+                val intent = Intent(this, BaseActivity::class.java)
+                intent.putExtra("USERNAME", username)
                 startActivity(intent)
                 finish()
             } else {
@@ -54,7 +53,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         binding.tvToRegister.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
+            val intent = Intent(this, OnboardingActivity::class.java)
             startActivity(intent)
         }
     }

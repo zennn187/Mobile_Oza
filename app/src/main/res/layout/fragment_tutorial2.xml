@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_tutorial_gradient_2"
     android:padding="24dp"
-    tools:context=".Message.Tutorial.Tutorial2Fragment">
+    tools:context=".Tutorial.Tutorial2Fragment">
 
     <ImageView
         android:id="@+id/ivTutorialLogo"
         android:layout_width="0dp"
         android:layout_height="240dp"
         android:contentDescription="@string/app_name"
-        android:src="@drawable/box2"
+        android:src="@drawable/logo_binadesa"
         app:layout_constraintBottom_toTopOf="@+id/tvTutorialTitle"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toEndOf="parent"

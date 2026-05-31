@@ -9,9 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.viewpager2.widget.ViewPager2 // Pastikan import ini benar
 import com.example.oza_idgaf.R
 import com.example.oza_idgaf.databinding.ActivityTutorialMessageBinding
-
 
 class TutorialMessageActivity : AppCompatActivity() {
 
@@ -44,15 +44,17 @@ class TutorialMessageActivity : AppCompatActivity() {
             if (currentItem < fragments.size - 1) {
                 binding.viewPagerTutorial.currentItem = currentItem + 1
             } else {
-                finish()
+                finish() // Menutup halaman tutorial jika sudah selesai
             }
         }
     }
 
     private fun setupViewPager() {
+        // Menggunakan "this" sebagai context untuk adapter
         val adapter = TutorialFragmentAdapter(this, fragments)
         binding.viewPagerTutorial.adapter = adapter
 
+        // Page Transformer untuk efek animasi fade & scale
         binding.viewPagerTutorial.setPageTransformer { page, position ->
             page.translationX = -position * page.width
             if (position < -1 || position > 1) {
@@ -73,6 +75,7 @@ class TutorialMessageActivity : AppCompatActivity() {
                 super.onPageSelected(position)
                 setCurrentIndicator(position)
 
+                // Mengubah teks dan warna tombol di halaman terakhir
                 if (position == fragments.size - 1) {
                     binding.btnTutorialAction.text = "Mulai Sekarang"
                     binding.btnTutorialAction.backgroundTintList = ContextCompat.getColorStateList(
@@ -96,8 +99,9 @@ class TutorialMessageActivity : AppCompatActivity() {
         layoutParams.setMargins(8, 0, 8, 0)
 
         for (i in indicators.indices) {
-            indicators[i] = ImageView(applicationContext)
-            indicators[i]?.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.dot_inactive))
+            // Menggunakan "this" (Activity Context) bukan applicationContext
+            indicators[i] = ImageView(this)
+            indicators[i]?.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_inactive))
             indicators[i]?.layoutParams = layoutParams
             binding.layoutIndicators.addView(indicators[i])
         }
@@ -108,9 +112,9 @@ class TutorialMessageActivity : AppCompatActivity() {
         for (i in 0 until childCount) {
             val imageView = binding.layoutIndicators.getChildAt(i) as ImageView
             if (i == index) {
-                imageView.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.dot_active))
+                imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_active))
             } else {
-                imageView.setImageDrawable(ContextCompat.getDrawable(applicationContext, R.drawable.dot_inactive))
+                imageView.setImageDrawable(ContextCompat.getDrawable(this, R.drawable.dot_inactive))
             }
         }
     }
