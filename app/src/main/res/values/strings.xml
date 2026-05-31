@@ -14,4 +14,15 @@
     <string name="login_title">Login UMKM Makanan</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="ob_title_1">Selamat Datang</string>
+    <string name="ob_desc_1">Temukan berbagai informasi berita terkini dan terpercaya langsung di dalam genggaman tangan Anda setiap hari.</string>
+    <string name="ob_title_2">Fitur Terupdate</string>
+    <string name="ob_desc_2">Aplikasi kami sekarang terintegrasi dengan Public API untuk menyajikan daftar artikel berita yang selalu diperbarui.</string>
+    <string name="ob_title_3">Mulai Jelajahi</string>
+    <string name="ob_desc_3">Siap untuk mencoba pengalaman baru? Ketuk tombol di bawah ini untuk masuk ke halaman login aplikasi.</string>
+    <string name="ob_btn_start">Ayo Mulai</string>
+    <string name="txt_loading_news">Memuat berita...</string>
+    <string name="err_empty_news">Data berita kosong</string>
+    <string name="err_fetch_news">Gagal memuat data dari API server</string>
 </resources>

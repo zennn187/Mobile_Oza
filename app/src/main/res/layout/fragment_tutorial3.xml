@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_tutorial_gradient_3"
+    android:padding="24dp"
+    tools:context=".Message.Tutorial.Tutorial3Fragment">
+
+    <ImageView
+        android:id="@+id/ivTutorialLogo"
+        android:layout_width="0dp"
+        android:layout_height="240dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/box2"
+        app:layout_constraintBottom_toTopOf="@+id/tvTutorialTitle"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_percent="0.65" />
+
+    <TextView
+        android:id="@+id/tvTutorialTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Mulai Eksplorasi Sekarang"
+        android:textAlignment="center"
+        android:textColor="#E65100"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvTutorialDescription"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivTutorialLogo" />
+
+    <TextView
+        android:id="@+id/tvTutorialDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:text="Semua konfigurasi selesai. Ketuk tombol di bawah untuk masuk ke ruang obrolan dan fitur utama aplikasi."
+        android:textAlignment="center"
+        android:textColor="#5D4037"
+        android:textSize="16sp"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTutorialTitle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
