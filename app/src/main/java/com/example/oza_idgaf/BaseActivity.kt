@@ -2,10 +2,14 @@ package com.example.oza_idgaf
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.oza_idgaf.More.MoreFragment
+import com.example.oza_idgaf.Pertemuan12.note.FragmentNote
+import com.example.oza_idgaf.Pertemuan12.todo.FragmentTodo
 import com.example.oza_idgaf.databinding.ActivityBaseBinding
+import com.google.android.material.navigation.NavigationBarView
 
 class BaseActivity : AppCompatActivity() {
 
@@ -28,34 +32,44 @@ class BaseActivity : AppCompatActivity() {
             loadFragment(homeFragment)
         }
 
-        binding.bottomNav.setOnItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.nav_home -> {
-                    val homeFragment = HomeFragment().apply {
-                        arguments = Bundle().apply {
-                            putString("USERNAME", username)
+        binding.bottomNav.setOnItemSelectedListener(object : NavigationBarView.OnItemSelectedListener {
+            override fun onNavigationItemSelected(item: MenuItem): Boolean {
+                return when (item.itemId) {
+                    R.id.nav_home -> {
+                        val homeFragment = HomeFragment().apply {
+                            arguments = Bundle().apply {
+                                putString("USERNAME", username)
+                            }
                         }
+                        loadFragment(homeFragment)
+                        true
                     }
-                    loadFragment(homeFragment)
-                    true
+                    R.id.nav_message -> {
+                        val intent = Intent(this@BaseActivity, com.example.oza_idgaf.Tutorial.TutorialMessageActivity::class.java)
+                        startActivity(intent)
+                        false
+                    }
+                    R.id.nav_more -> {
+                        loadFragment(MoreFragment())
+                        true
+                    }
+                    R.id.nav_note -> {
+                        loadFragment(FragmentNote())
+                        true
+                    }
+                    R.id.nav_todo -> {
+                        loadFragment(FragmentTodo())
+                        true
+                    }
+                    else -> false
                 }
-                R.id.nav_message -> {
-                    val intent = Intent(this, com.example.oza_idgaf.Tutorial.TutorialMessageActivity::class.java)
-                    startActivity(intent)
-                    false
-                }
-                R.id.nav_more -> {
-                    loadFragment(MoreFragment())
-                    true
-                }
-                else -> false
             }
-        }
+        })
     }
 
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
-            .commit()
+            .commitAllowingStateLoss()
     }
 }
