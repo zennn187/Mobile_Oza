@@ -3,17 +3,21 @@ package com.example.oza_idgaf.Pertemuan12.data
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import androidx.room.Update
 
 @Dao
 interface NoteDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(note: NoteEntity): Long
 
-    @Query("SELECT * FROM notes ORDER BY createdAt DESC")
-    suspend fun getAll(): List<NoteEntity>
-
-    @Insert
-    suspend fun insert(note: NoteEntity)
+    @Update
+    fun update(note: NoteEntity): Int
 
     @Delete
-    suspend fun delete(note: NoteEntity)
+    fun delete(note: NoteEntity): Int
+
+    @Query("SELECT * FROM notes")
+    fun getAllNotes(): List<NoteEntity>
 }

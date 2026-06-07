@@ -9,7 +9,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class NoteAdapter(
     private val notes: List<NoteEntity>,
-    private val onDeleteClick: (NoteEntity) -> Unit
+    private val noteFragment: FragmentNote
 ) : RecyclerView.Adapter<NoteAdapter.NoteViewHolder>() {
 
     inner class NoteViewHolder(val binding: ItemNoteBinding) : RecyclerView.ViewHolder(binding.root)
@@ -27,9 +27,9 @@ class NoteAdapter(
         holder.binding.btnDelete.setOnClickListener {
             MaterialAlertDialogBuilder(holder.itemView.context)
                 .setTitle("Hapus Catatan")
-                .setMessage("Yakin ingin menghapus catatan ini?")
+                .setMessage("Apakah Anda yakin ingin menghapus catatan ini?")
                 .setPositiveButton("Ya") { dialog, _ ->
-                    onDeleteClick(note)
+                    noteFragment.deleteNote(note)
                     dialog.dismiss()
                 }
                 .setNegativeButton("Batal") { dialog, _ -> dialog.dismiss() }

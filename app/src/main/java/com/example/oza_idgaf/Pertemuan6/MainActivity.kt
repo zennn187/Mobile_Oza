@@ -45,11 +45,11 @@ class MainActivity : AppCompatActivity() {
                         replaceFragment(MoreFragment())
                         true
                     }
-                    R.id.nav_note -> {
+                    R.id.navigation_note -> {
                         replaceFragment(FragmentNote())
                         true
                     }
-                    R.id.nav_todo -> {
+                    R.id.navigation_todo -> {
                         replaceFragment(FragmentTodo())
                         true
                     }

@@ -53,11 +53,11 @@ class BaseActivity : AppCompatActivity() {
                         loadFragment(MoreFragment())
                         true
                     }
-                    R.id.nav_note -> {
+                    R.id.navigation_note -> {
                         loadFragment(FragmentNote())
                         true
                     }
-                    R.id.nav_todo -> {
+                    R.id.navigation_todo -> {
                         loadFragment(FragmentTodo())
                         true
                     }

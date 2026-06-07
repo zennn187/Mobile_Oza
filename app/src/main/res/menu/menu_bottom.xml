@@ -16,12 +16,12 @@
         android:title="Profile" />
 
     <item
-        android:id="@+id/nav_note"
+        android:id="@+id/navigation_note"
         android:icon="@android:drawable/ic_menu_edit"
         android:title="Note" />
 
     <item
-        android:id="@+id/nav_todo"
+        android:id="@+id/navigation_todo"
         android:icon="@android:drawable/ic_menu_agenda"
         android:title="Todo" />
 </menu>

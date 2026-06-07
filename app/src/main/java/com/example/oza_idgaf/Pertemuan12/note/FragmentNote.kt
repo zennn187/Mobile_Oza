@@ -12,7 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.oza_idgaf.Pertemuan12.data.AppDatabase
 import com.example.oza_idgaf.Pertemuan12.data.NoteEntity
 import com.example.oza_idgaf.databinding.FragmentNoteBinding
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class FragmentNote : Fragment() {
     private var _binding: FragmentNoteBinding? = null
@@ -31,7 +33,7 @@ class FragmentNote : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         db = AppDatabase.getInstance(requireContext())
-        adapter = NoteAdapter(notes) { note -> deleteNote(note) }
+        adapter = NoteAdapter(notes, this)
 
         binding.rvNotes.layoutManager = LinearLayoutManager(requireContext())
         binding.rvNotes.adapter = adapter
@@ -42,19 +44,23 @@ class FragmentNote : Fragment() {
         }
     }
 
-    private fun fetchNotes() {
-        lifecycleScope.launch {
-            val data = db.noteDao().getAll()
-            notes.clear()
-            notes.addAll(data)
-            adapter.notifyDataSetChanged()
+    fun fetchNotes() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            val data = db.noteDao().getAllNotes()
+            withContext(Dispatchers.Main) {
+                notes.clear()
+                notes.addAll(data)
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 
-    private fun deleteNote(note: NoteEntity) {
-        lifecycleScope.launch {
+    fun deleteNote(note: NoteEntity) {
+        lifecycleScope.launch(Dispatchers.IO) {
             db.noteDao().delete(note)
-            fetchNotes()
+            withContext(Dispatchers.Main) {
+                fetchNotes()
+            }
         }
     }
 

@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class NoteFormActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivityNoteFormBinding
     private lateinit var db: AppDatabase
 
@@ -28,19 +27,22 @@ class NoteFormActivity : AppCompatActivity() {
             val content = binding.etContent.text.toString()
 
             if (title.isNotBlank() && content.isNotBlank()) {
-                lifecycleScope.launch(Dispatchers.Main) {
-                    val note = NoteEntity(
-                        title = title,
-                        content = content,
-                        createdAt = System.currentTimeMillis()
-                    )
-                    withContext(Dispatchers.IO) {
-                        db.noteDao().insert(note)
+                val note = NoteEntity(
+                    title = title,
+                    content = content,
+                    createdAt = System.currentTimeMillis()
+                )
+
+                lifecycleScope.launch(Dispatchers.IO) {
+                    db.noteDao().insert(note)
+
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@NoteFormActivity, "Catatan berhasil disimpan!", Toast.LENGTH_SHORT).show()
+                        finish()
                     }
-                    finish()
                 }
             } else {
-                Toast.makeText(this, "Isi semua kolom!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Judul dan konten tidak boleh kosong!", Toast.LENGTH_SHORT).show()
             }
         }
     }

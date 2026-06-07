@@ -11,15 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.oza_idgaf.Pertemuan12.data.AppDatabase
 import com.example.oza_idgaf.Pertemuan12.data.TodoEntity
 import com.example.oza_idgaf.databinding.FragmentTodoBinding
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class FragmentTodo : Fragment() {
     private var _binding: FragmentTodoBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var db: AppDatabase
     private lateinit var adapter: TodoAdapter
-    private val todoList = mutableListOf<TodoEntity>()
+    private lateinit var db: AppDatabase
+    private val todos = mutableListOf<TodoEntity>()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         _binding = FragmentTodoBinding.inflate(inflater, container, false)
@@ -28,27 +30,27 @@ class FragmentTodo : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        db = AppDatabase.getInstance(requireContext())
 
-        adapter = TodoAdapter(
-            todoList,
-            onUpdate = { todo -> updateTodo(todo) },
-            onDelete = { todo -> deleteTodo(todo) }
-        )
+        db = AppDatabase.getInstance(requireContext())
+        adapter = TodoAdapter(todos, this)
 
         binding.rvTodos.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTodos.adapter = adapter
 
         binding.btnAddTask.setOnClickListener {
-            val taskName = binding.etTodo.text.toString()
-            if (taskName.isNotBlank()) {
-                lifecycleScope.launch {
-                    db.todoDao().insert(TodoEntity(task = taskName))
-                    binding.etTodo.text.clear()
-                    fetchTodos()
+            val taskText = binding.etTodo.text.toString()
+            if (taskText.isNotBlank()) {
+                val todo = TodoEntity(task = taskText)
+
+                lifecycleScope.launch(Dispatchers.IO) {
+                    db.todoDao().insert(todo)
+                    withContext(Dispatchers.Main) {
+                        binding.etTodo.text.clear()
+                        fetchTodos()
+                    }
                 }
             } else {
-                Toast.makeText(context, "Tulis tugas terlebih dahulu!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Tugas tidak boleh kosong!", Toast.LENGTH_SHORT).show()
             }
         }
 
@@ -56,25 +58,28 @@ class FragmentTodo : Fragment() {
     }
 
     private fun fetchTodos() {
-        lifecycleScope.launch {
-            val data = db.todoDao().getAll()
-            todoList.clear()
-            todoList.addAll(data)
-            adapter.notifyDataSetChanged()
+        lifecycleScope.launch(Dispatchers.IO) {
+            val data = db.todoDao().getAllTodos()
+            withContext(Dispatchers.Main) {
+                todos.clear()
+                todos.addAll(data)
+                adapter.notifyDataSetChanged()
+            }
         }
     }
 
-    private fun updateTodo(todo: TodoEntity) {
-        lifecycleScope.launch {
+    fun updateTodo(todo: TodoEntity) {
+        lifecycleScope.launch(Dispatchers.IO) {
             db.todoDao().update(todo)
-            fetchTodos()
         }
     }
 
-    private fun deleteTodo(todo: TodoEntity) {
-        lifecycleScope.launch {
+    fun deleteTodo(todo: TodoEntity) {
+        lifecycleScope.launch(Dispatchers.IO) {
             db.todoDao().delete(todo)
-            fetchTodos()
+            withContext(Dispatchers.Main) {
+                fetchTodos()
+            }
         }
     }
 

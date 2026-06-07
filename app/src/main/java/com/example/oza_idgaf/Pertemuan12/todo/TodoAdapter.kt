@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.oza_idgaf.Pertemuan12.data.TodoEntity
-import com.example.oza_idgaf.databinding.ItemTodoBinding
+import com.example.oza_idgaf.databinding.ItemTodoBinding // Pastikan Anda membuat file item_todo.xml
 
 class TodoAdapter(
     private val todos: List<TodoEntity>,
-    private val onUpdate: (TodoEntity) -> Unit,
-    private val onDelete: (TodoEntity) -> Unit
+    private val todoFragment: FragmentTodo
 ) : RecyclerView.Adapter<TodoAdapter.TodoViewHolder>() {
 
     inner class TodoViewHolder(val binding: ItemTodoBinding) : RecyclerView.ViewHolder(binding.root)
@@ -21,18 +20,15 @@ class TodoAdapter(
 
     override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val todo = todos[position]
-        holder.binding.cbTodo.text = todo.task
+        holder.binding.tvTodoTask.text = todo.task
+        holder.binding.cbDone.isChecked = todo.isCompleted
 
-        // Menghindari trigger loop saat inisiasi state checkbox
-        holder.binding.cbTodo.setOnCheckedChangeListener(null)
-        holder.binding.cbTodo.isChecked = todo.isCompleted
-
-        holder.binding.cbTodo.setOnCheckedChangeListener { _, isChecked ->
-            onUpdate(todo.copy(isCompleted = isChecked))
+        holder.binding.cbDone.setOnCheckedChangeListener { _, isChecked ->
+            todoFragment.updateTodo(todo.copy(isCompleted = isChecked))
         }
 
         holder.binding.btnDeleteTodo.setOnClickListener {
-            onDelete(todo)
+            todoFragment.deleteTodo(todo)
         }
     }
 
