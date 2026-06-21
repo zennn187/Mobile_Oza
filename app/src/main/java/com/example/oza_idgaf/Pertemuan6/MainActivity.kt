@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.oza_idgaf.R
 import com.example.oza_idgaf.databinding.ActivityMain2Binding
 import android.content.SharedPreferences
-import com.example.oza_idgaf.HomeFragment
+import com.example.oza_idgaf.Home.HomeFragment
 import com.example.oza_idgaf.Message.MessageFragment
 import com.example.oza_idgaf.More.MoreFragment
 import com.example.oza_idgaf.Pertemuan12.note.FragmentNote

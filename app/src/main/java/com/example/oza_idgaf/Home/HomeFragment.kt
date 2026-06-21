@@ -1,4 +1,4 @@
-package com.example.oza_idgaf
+package com.example.oza_idgaf.Home
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.example.oza_idgaf.CatFactApiClient
 import com.example.oza_idgaf.Pertemuan10.MenuActivity
 import com.example.oza_idgaf.Pertemuan4.Custom1Activity
 import com.example.oza_idgaf.Pertemuan4.LoginActivity
@@ -78,8 +79,17 @@ class HomeFragment : Fragment() {
     private fun loadCatFact() {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
-                val response = CatFactApiClient.apiService.getCatFact()
-                binding.tvCatFact.text = "\"${response.fact}\""
+                val apiClient = CatFactApiClient
+                if (apiClient != null) {
+                    val response = apiClient.apiService.getCatFact()
+                    if (response != null && !response.fact.isNullOrEmpty()) {
+                        binding.tvCatFact.text = "\"${response.fact}\""
+                    } else {
+                        binding.tvCatFact.text = "Fakta kosong."
+                    }
+                } else {
+                    binding.tvCatFact.text = "API Client belum siap."
+                }
             } catch (e: Exception) {
                 binding.tvCatFact.text = "Gagal mengambil fakta kucing."
             }

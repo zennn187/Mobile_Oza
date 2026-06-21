@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.oza_idgaf.Home.HomeFragment
 import com.example.oza_idgaf.More.MoreFragment
 import com.example.oza_idgaf.Pertemuan12.note.FragmentNote
 import com.example.oza_idgaf.Pertemuan12.todo.FragmentTodo
