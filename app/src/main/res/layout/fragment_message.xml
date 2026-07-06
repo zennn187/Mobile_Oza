@@ -1,57 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F7FA">
 
-    <LinearLayout
-        android:id="@+id/container"
-        android:orientation="vertical"
-        android:padding="20dp"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <TextView
-            android:id="@+id/tvHeader"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tentang Aplikasi"
-            android:textSize="14sp"
-            android:textColor="@color/purple_300"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:textStyle="bold"
-            android:textColor="#222"
-            android:layout_marginBottom="12dp"/>
-
-        <TextView
-            android:id="@+id/tvDesc"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#555"
-            android:lineSpacingExtra="4dp"
-            android:layout_marginBottom="16dp"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/purple_medium"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:title="Pesan UMKM"
+            app:titleTextColor="@android:color/white" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fitur Utama"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="#333"
-            android:layout_marginBottom="8dp"/>
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <TextView
-            android:id="@+id/tvFitur"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="#444"
-            android:lineSpacingExtra="6dp"/>
+    <ListView
+        android:id="@+id/listMessageItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    </LinearLayout>
-</ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

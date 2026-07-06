@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F6F5FA">
+
+    <View
+        android:id="@+id/headerBackground"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@drawable/header_gradient"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@android:drawable/ic_menu_revert"
+        app:title="Semua Pertemuan"
+        app:titleTextColor="@android:color/white" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:padding="12dp">
+
+            <!-- Pertemuan 2 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP2"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P2" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Welcome Screen" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 4 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP4"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P4" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dashboard &amp; Rumus" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 5 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP5"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P5" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Toolbar &amp; Web" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 6 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP6"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P6" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Shared Prefs" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 9 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP9"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P9" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UI Components" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 10 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP10"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P10" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="UMKM Menu" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 11 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP11"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P11" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tutorial Flow" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 12 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP12"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P12" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Note &amp; Todo" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 13 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP13"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P13" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Fragments &amp; Tabs" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Pertemuan 14 -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardP14"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="P14" android:textColor="@color/purple_medium" android:textSize="22sp" android:fontFamily="@font/montserrat_bold"/>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Utils &amp; Extras" android:textSize="12sp" android:fontFamily="@font/montserrat_regular"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

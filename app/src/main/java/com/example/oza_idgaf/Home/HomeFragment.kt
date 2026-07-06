@@ -7,11 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import com.example.oza_idgaf.CatFactApiClient
-import com.example.oza_idgaf.Pertemuan10.MenuActivity
-import com.example.oza_idgaf.Pertemuan4.Custom1Activity
-import com.example.oza_idgaf.Pertemuan4.LoginActivity
-import com.example.oza_idgaf.Pertemuan4.RumusBangunRuangActivity
+import com.example.oza_idgaf.Home.Pertemuan11.data.api.CatFactApiClient
+import com.example.oza_idgaf.Home.Pertemuan10.MenuActivity
+import com.example.oza_idgaf.Home.Pertemuan4.Custom1Activity
+import com.example.oza_idgaf.Home.Pertemuan4.LoginActivity
+import com.example.oza_idgaf.Home.Pertemuan4.RumusBangunRuangActivity
+import com.example.oza_idgaf.Home.Pertemuan9.NinthActivity
 import com.example.oza_idgaf.databinding.FragmentHomeBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
@@ -48,6 +49,10 @@ class HomeFragment : Fragment() {
 
         binding.cardMenuUmkm.setOnClickListener {
             startActivity(Intent(activity, MenuActivity::class.java))
+        }
+
+        binding.cardSemuaPertemuan.setOnClickListener {
+            startActivity(Intent(activity, AllMeetingsActivity::class.java))
         }
 
         binding.cardKeluar.setOnClickListener {

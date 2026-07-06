@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Tutorial.TutorialMessageActivity"> <androidx.viewpager2.widget.ViewPager2
+    tools:context=".Home.Pertemuan11.Tutorial.TutorialMessageActivity"> <androidx.viewpager2.widget.ViewPager2
     android:id="@+id/viewPagerTutorial"
     android:layout_width="0dp"
     android:layout_height="0dp"

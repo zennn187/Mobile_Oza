@@ -12,37 +12,27 @@ class MessageFragment : Fragment() {
     private var _binding: FragmentMessageBinding? = null
     private val binding get() = _binding!!
 
+    private val messageList = listOf(
+        MessageModel("Alya", "Halo! Apa kabar?", "https://avatar.iran.liara.run/public/1"),
+        MessageModel("Budi", "Sudah makan?", "https://avatar.iran.liara.run/public/2"),
+        MessageModel("Citra", "Jangan lupa tugasnya ya!", "https://avatar.iran.liara.run/public/3"),
+        MessageModel("Dika", "Besok kita rapat jam 9", "https://avatar.iran.liara.run/public/4"),
+        MessageModel("Eka", "Nice job kemarin!", "https://avatar.iran.liara.run/public/5"),
+        MessageModel("Fajar", "Lagi ngapain?", "https://avatar.iran.liara.run/public/6")
+    )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMessageBinding.inflate(inflater, container, false)
-
-        binding.tvTitle.text = "UMKM - Bina Desa"
-
-        binding.tvDesc.text = """
-            Bina Desa UMKM adalah sebuah konsep pengembangan desa berbasis teknologi 
-            yang bertujuan untuk meningkatkan kesejahteraan masyarakat melalui 
-            pemanfaatan sistem informasi dan digitalisasi layanan.
-        """.trimIndent()
-
-        binding.tvFitur.text = """
-            • Informasi dan Profil UMKM
-            • Digitalisasi UMKM Lokal
-            • Edukasi & Pelatihan Masyarakat
-            • Promosi Produk UMKM
-        """.trimIndent()
-
-        binding.container.alpha = 0f
-        binding.container.translationY = 50f
-
-        binding.container.animate()
-            .alpha(1f)
-            .translationY(0f)
-            .setDuration(700)
-            .start()
-
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adapter = MessageAdapter(requireContext(), messageList)
+        binding.listMessageItems.adapter = adapter
     }
 
     override fun onDestroyView() {

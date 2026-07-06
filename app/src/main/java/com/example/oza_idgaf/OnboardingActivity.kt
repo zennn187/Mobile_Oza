@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
-import com.example.oza_idgaf.Pertemuan4.LoginActivity
+import com.example.oza_idgaf.Home.Pertemuan4.LoginActivity
 import com.example.oza_idgaf.databinding.ActivityOnboardingBinding
 
 class OnboardingActivity : AppCompatActivity() {

@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg_tutorial_gradient_2"
     android:padding="24dp"
-    tools:context=".Tutorial.Tutorial2Fragment">
+    tools:context=".Home.Pertemuan11.Tutorial.Tutorial2Fragment">
 
     <ImageView
         android:id="@+id/ivTutorialLogo"

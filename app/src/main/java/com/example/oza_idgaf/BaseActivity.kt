@@ -6,9 +6,10 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.oza_idgaf.Home.HomeFragment
+import com.example.oza_idgaf.Home.Pertemuan11.Tutorial.TutorialMessageActivity
 import com.example.oza_idgaf.More.MoreFragment
-import com.example.oza_idgaf.Pertemuan12.note.FragmentNote
-import com.example.oza_idgaf.Pertemuan12.todo.FragmentTodo
+import com.example.oza_idgaf.Home.Pertemuan12.note.FragmentNote
+import com.example.oza_idgaf.Home.Pertemuan12.todo.FragmentTodo
 import com.example.oza_idgaf.databinding.ActivityBaseBinding
 import com.google.android.material.navigation.NavigationBarView
 
@@ -46,7 +47,7 @@ class BaseActivity : AppCompatActivity() {
                         true
                     }
                     R.id.nav_message -> {
-                        val intent = Intent(this@BaseActivity, com.example.oza_idgaf.Tutorial.TutorialMessageActivity::class.java)
+                        val intent = Intent(this@BaseActivity, TutorialMessageActivity::class.java)
                         startActivity(intent)
                         false
                     }

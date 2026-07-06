@@ -20,25 +20,31 @@ class MoreFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentMoreBinding.inflate(inflater, container, false)
-
+        
         setupActionButtons()
-
+        
         return binding.root
     }
 
     private fun setupActionButtons() {
+        // Social Media & Links
         binding.btnLinkedIn.setOnClickListener {
             openUrl("https://www.linkedin.com/in/oza-okta-gistrada")
-        }
-
-        binding.btnGitHub.setOnClickListener {
-            openUrl("https://github.com/zennn187")
         }
 
         binding.btnInstagram.setOnClickListener {
             openUrl("https://www.instagram.com/oza.oktaa")
         }
 
+        binding.tvWebsite.setOnClickListener {
+            openUrl("https://oza.oktaa")
+        }
+
+        binding.cardWebsite.setOnClickListener {
+            openUrl("https://oza.oktaa")
+        }
+
+        // WhatsApp Logic
         binding.btnSocialWhatsApp.setOnClickListener {
             openWhatsApp()
         }
@@ -47,8 +53,11 @@ class MoreFragment : Fragment() {
             openWhatsApp()
         }
 
-        binding.tvWebsite.setOnClickListener {
-            openUrl("https://oza.oktaa")
+        // Logout
+        binding.btnLogout.setOnClickListener {
+            Toast.makeText(context, "Berhasil Keluar", Toast.LENGTH_SHORT).show()
+            // Logika logout bisa ditambahkan di sini (misal: intent ke LoginActivity)
+            activity?.finish()
         }
     }
 
@@ -57,14 +66,14 @@ class MoreFragment : Fragment() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             startActivity(intent)
         } catch (e: Exception) {
-            Toast.makeText(context, "Tidak dapat membuka link", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "Tidak dapat membuka tautan", Toast.LENGTH_SHORT).show()
         }
     }
 
     private fun openWhatsApp() {
         val nomorWa = "6289505647628"
-        val pesan = "Halo Oza, saya tertarik dengan sistem ekosistem digital UMKM Bina Desa."
-
+        val pesan = "Halo Oza, saya ingin bertanya seputar program UMKM Bina Desa."
+        
         val url = "https://api.whatsapp.com/send?phone=$nomorWa&text=${Uri.encode(pesan)}"
         try {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
